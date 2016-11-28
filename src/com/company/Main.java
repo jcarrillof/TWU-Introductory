@@ -20,6 +20,7 @@ public class Main {
 //
 //        fizzBuzzGame.FizzBuzz();
 
-        primeFactors.generate(30);
+        System.out.println(primeFactors.generate(30));
+
     }
 }
