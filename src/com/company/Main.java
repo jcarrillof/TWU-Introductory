@@ -6,18 +6,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Asterisk asterisk_draw = new Asterisk();
+        Asterisk asteriskDraw = new Asterisk();
         FizzBuzzGame fizzBuzzGame = new FizzBuzzGame();
+        PrimeFactors primeFactors = new PrimeFactors();
 
-        //dibujar
-//        asterisk_draw.oneAsterisk();
-//        asterisk_draw.horizontalLine(8);
-//        asterisk_draw.verticalLine(4);
-//        asterisk_draw.rightTriangle(3);
-//        asterisk_draw.isoscelesTriangle(3);
-//        asterisk_draw.diamond(3);
-//        asterisk_draw.diamondName(3);
+//        asteriskDraw.oneAsterisk();
+//        asteriskDraw.horizontalLine(8);
+//        asteriskDraw.verticalLine(4);
+//        asteriskDraw.rightTriangle(3);
+//        asteriskDraw.isoscelesTriangle(3);
+//        asteriskDraw.diamond(3);
+//        asteriskDraw.diamondName(3);
+//
+//        fizzBuzzGame.FizzBuzz();
 
-        fizzBuzzGame.FizzBuzz();
+        primeFactors.generate(30);
     }
 }

@@ -6,30 +6,33 @@ package com.company;
 
 public class FizzBuzzGame {
 
+    private final String fizz = "Fizz";
+    private final String buzz = "Buzz";
+    private final String fizzBuzz = "FizzBuzz";
+
     public void FizzBuzz(){
         for (int i=1; i<=100; i++){
-
-            if(divisibleByThree(i) != null){
-                System.out.println(divisibleByThree(i));
-            }else if(divisibleByFive(i) != null){
-                System.out.println(divisibleByFive(i));
+            if(divisibleByThreeAndFive(i)){
+                System.out.println(fizzBuzz);
+            }else if(divisibleByThree(i)){
+                System.out.println(fizz);
+            }else if(divisibleByFive(i)){
+                System.out.println(buzz);
             }else {
                 System.out.println(i);
             }
         }
     }
 
-    private String divisibleByThree(int number){
-        if(number%3 == 0){
-            return "Fizz";
-        }
-        return null;
+    private boolean divisibleByThree(int number){
+        return number%3 == 0;
     }
 
-    private String divisibleByFive(int number){
-        if(number%5 == 0){
-            return "Buzz";
-        }
-        return null;
+    private boolean divisibleByFive(int number){
+        return number%5 == 0;
+    }
+
+    private boolean divisibleByThreeAndFive(int number){
+        return divisibleByThree(number) && divisibleByFive(number);
     }
 }
