@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Asterisk asterisk_draw = new Asterisk();
+        FizzBuzzGame fizzBuzzGame = new FizzBuzzGame();
 
         //dibujar
 //        asterisk_draw.oneAsterisk();
@@ -17,6 +18,6 @@ public class Main {
 //        asterisk_draw.diamond(3);
 //        asterisk_draw.diamondName(3);
 
-        System.out.println("Hola mundo");
+        fizzBuzzGame.FizzBuzz();
     }
 }
