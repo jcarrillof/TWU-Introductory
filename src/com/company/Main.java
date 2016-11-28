@@ -17,6 +17,6 @@ public class Main {
 //        asterisk_draw.diamond(3);
 //        asterisk_draw.diamondName(3);
 
-
+        System.out.println("Hola mundo");
     }
 }
