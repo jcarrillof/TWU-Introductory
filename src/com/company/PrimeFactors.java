@@ -14,13 +14,11 @@ public class PrimeFactors {
         List<Integer> primeFactors = new ArrayList<>();
 
         for (int i=2; i<=number; i++){
-            while (number%i == 0){
-                System.out.println(i);
+            if (number%i == 0){
                 primeFactors.add(i);
                 number /= i;
             }
         }
-
         return primeFactors;
     }
 }
