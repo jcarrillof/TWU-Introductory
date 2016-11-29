@@ -102,7 +102,7 @@ public class Main {
                     System.out.print("Number: ");
                     try {
                         int number = scannerNumber.nextInt();
-                        primeFactors.generate(number);
+                        System.out.println(primeFactors.generate(number));
                     }catch (InputMismatchException e){
                         System.err.println("\nThe number must be an integer\n");
                         break;

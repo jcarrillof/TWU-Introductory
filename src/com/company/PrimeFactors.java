@@ -12,10 +12,14 @@ public class PrimeFactors {
     public List<Integer> generate(int number){
 
         List<Integer> primeFactors = new ArrayList<>();
+        int temporal = 0;
 
         for (int i=2; i<=number; i++){
-            if (number%i == 0){
-                primeFactors.add(i);
+            while (number%i == 0){
+                if(i != temporal){
+                    primeFactors.add(i);
+                }
+                temporal = i;
                 number /= i;
             }
         }
