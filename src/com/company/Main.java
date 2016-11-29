@@ -30,6 +30,7 @@ public class Main {
 
         try{
             int option = scanner.nextInt();
+            Scanner scannerNumber = new Scanner(System.in);
             switch (option){
                 case 1:
                     asteriskDraw.oneAsterisk();
@@ -37,7 +38,6 @@ public class Main {
                 case 2:
                     System.out.print("Number of asterisks: ");
                     try {
-                        Scanner scannerNumber = new Scanner(System.in);
                         int numberAsterisksHorizontal = scannerNumber.nextInt();
                         asteriskDraw.horizontalLine(numberAsterisksHorizontal);
                     }catch (InputMismatchException e){
@@ -48,7 +48,6 @@ public class Main {
                 case 3:
                     System.out.print("Number of asterisks: ");
                     try {
-                        Scanner scannerNumber = new Scanner(System.in);
                         int numberAsterisksVertical = scannerNumber.nextInt();
                         asteriskDraw.verticalLine(numberAsterisksVertical);
                     }catch (InputMismatchException e){
@@ -59,7 +58,6 @@ public class Main {
                 case 4:
                     System.out.print("Number of lines: ");
                     try {
-                        Scanner scannerNumber = new Scanner(System.in);
                         int numberLinesRightTriangle = scannerNumber.nextInt();
                         asteriskDraw.rightTriangle(numberLinesRightTriangle);
                     }catch (InputMismatchException e){
@@ -70,7 +68,6 @@ public class Main {
                 case 5:
                     System.out.print("Number of lines: ");
                     try {
-                        Scanner scannerNumber = new Scanner(System.in);
                         int numberLinesIsoscelesTriangle = scannerNumber.nextInt();
                         asteriskDraw.isoscelesTriangle(numberLinesIsoscelesTriangle);
                     }catch (InputMismatchException e){
@@ -81,7 +78,6 @@ public class Main {
                 case 6:
                     System.out.print("Middle line number: ");
                     try {
-                        Scanner scannerNumber = new Scanner(System.in);
                         int middleLineNumber = scannerNumber.nextInt();
                         asteriskDraw.diamond(middleLineNumber);
                     }catch (InputMismatchException e){
@@ -92,7 +88,6 @@ public class Main {
                 case 7:
                     System.out.print("Middle line number for name: ");
                     try {
-                        Scanner scannerNumber = new Scanner(System.in);
                         int middleLineNumberForName = scannerNumber.nextInt();
                         asteriskDraw.diamondName(middleLineNumberForName);
                     }catch (InputMismatchException e){
@@ -106,7 +101,6 @@ public class Main {
                 case 9:
                     System.out.print("Number: ");
                     try {
-                        Scanner scannerNumber = new Scanner(System.in);
                         int number = scannerNumber.nextInt();
                         primeFactors.generate(number);
                     }catch (InputMismatchException e){
