@@ -1,20 +1,19 @@
 package com.company;
 
-//Autor: Jennifer Carrillo
+// Jennifer Carrillo
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void menu(){
+    private static void menu(){
 
         Asterisk asteriskDraw = new Asterisk();
         FizzBuzzGame fizzBuzzGame = new FizzBuzzGame();
         PrimeFactors primeFactors = new PrimeFactors();
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("/***** Menu *****/");
+        System.out.println("\n/***** Menu *****/");
         System.out.println("\nSelect an option:\n");
         System.out.println("1. Print one asterisk");
         System.out.println("2. Draw a horizontal line");
@@ -27,62 +26,108 @@ public class Main {
         System.out.println("9. Prime Factors");
 
         System.out.print("\nOption: ");
-        int option = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-        switch (option){
-            case 1:
-                asteriskDraw.oneAsterisk();
-                break;
-            case 2:
-                System.out.print("Number of asterisks: ");
-                int numberAsterisksHorizontal = scanner.nextInt();
-                asteriskDraw.horizontalLine(numberAsterisksHorizontal);
-                break;
-            case 3:
-                System.out.print("Number of asterisks: ");
-                int numberAsterisksVertical = scanner.nextInt();
-                asteriskDraw.verticalLine(numberAsterisksVertical);
-                break;
-            case 4:
-                System.out.print("Number of lines: ");
-                int numberLinesRightTriangle = scanner.nextInt();
-                asteriskDraw.rightTriangle(numberLinesRightTriangle);
-                break;
-            case 5:
-                System.out.print("Number of lines: ");
-                int numberLinesIsoscelesTriangle = scanner.nextInt();
-                asteriskDraw.isoscelesTriangle(numberLinesIsoscelesTriangle);
-                break;
-            case 6:
-                System.out.print("Middle line number: ");
-                int middleLineNumber = scanner.nextInt();
-                asteriskDraw.diamond(middleLineNumber);
-                break;
-            case 7:
-                System.out.print("Middle line number for name: ");
-                int middleLineNumberForName = scanner.nextInt();
-                asteriskDraw.diamondName(middleLineNumberForName);
-                break;
-            case 8:
-                fizzBuzzGame.FizzBuzz();
-                break;
-            case 9:
-                System.out.print("Number: ");
-                int number = scanner.nextInt();
-                primeFactors.generate(number);
-                break;
-            default:
-                System.out.println("Exit");
-                break;
+        try{
+            int option = scanner.nextInt();
+            switch (option){
+                case 1:
+                    asteriskDraw.oneAsterisk();
+                    break;
+                case 2:
+                    System.out.print("Number of asterisks: ");
+                    try {
+                        Scanner scannerNumber = new Scanner(System.in);
+                        int numberAsterisksHorizontal = scannerNumber.nextInt();
+                        asteriskDraw.horizontalLine(numberAsterisksHorizontal);
+                    }catch (InputMismatchException e){
+                        System.err.println("\nThe number of asterisks must be an integer\n");
+                        break;
+                    }
+                    break;
+                case 3:
+                    System.out.print("Number of asterisks: ");
+                    try {
+                        Scanner scannerNumber = new Scanner(System.in);
+                        int numberAsterisksVertical = scannerNumber.nextInt();
+                        asteriskDraw.verticalLine(numberAsterisksVertical);
+                    }catch (InputMismatchException e){
+                        System.err.println("\nThe number of asterisks must be an integer\n");
+                        break;
+                    }
+                    break;
+                case 4:
+                    System.out.print("Number of lines: ");
+                    try {
+                        Scanner scannerNumber = new Scanner(System.in);
+                        int numberLinesRightTriangle = scannerNumber.nextInt();
+                        asteriskDraw.rightTriangle(numberLinesRightTriangle);
+                    }catch (InputMismatchException e){
+                        System.err.println("\nThe number of lines must be an integer\n");
+                        break;
+                    }
+                    break;
+                case 5:
+                    System.out.print("Number of lines: ");
+                    try {
+                        Scanner scannerNumber = new Scanner(System.in);
+                        int numberLinesIsoscelesTriangle = scannerNumber.nextInt();
+                        asteriskDraw.isoscelesTriangle(numberLinesIsoscelesTriangle);
+                    }catch (InputMismatchException e){
+                        System.err.println("\nThe number of lines must be an integer\n");
+                        break;
+                    }
+                    break;
+                case 6:
+                    System.out.print("Middle line number: ");
+                    try {
+                        Scanner scannerNumber = new Scanner(System.in);
+                        int middleLineNumber = scannerNumber.nextInt();
+                        asteriskDraw.diamond(middleLineNumber);
+                    }catch (InputMismatchException e){
+                        System.err.println("\nThe middle line number must be an integer\n");
+                        break;
+                    }
+                    break;
+                case 7:
+                    System.out.print("Middle line number for name: ");
+                    try {
+                        Scanner scannerNumber = new Scanner(System.in);
+                        int middleLineNumberForName = scannerNumber.nextInt();
+                        asteriskDraw.diamondName(middleLineNumberForName);
+                    }catch (InputMismatchException e){
+                        System.err.println("\nThe middle line number must be an integer\n");
+                        break;
+                    }
+                    break;
+                case 8:
+                    fizzBuzzGame.FizzBuzz();
+                    break;
+                case 9:
+                    System.out.print("Number: ");
+                    try {
+                        Scanner scannerNumber = new Scanner(System.in);
+                        int number = scannerNumber.nextInt();
+                        primeFactors.generate(number);
+                    }catch (InputMismatchException e){
+                        System.err.println("\nThe number must be an integer\n");
+                        break;
+                    }
+                    break;
+                default:
+                    System.out.println("Exit");
+                    System.exit(0);
+                    break;
+            }
+        } catch (InputMismatchException e) {
+            System.err.println("\nThe option must be an integer\n");
         }
-
     }
 
     public static void main(String[] args) {
-//        menu();
-
-        Asterisk asteriskDraw = new Asterisk();
-
-        asteriskDraw.diamond(4);
+        while (true){
+            menu();
+            System.out.println("\n");
+        }
     }
 }
